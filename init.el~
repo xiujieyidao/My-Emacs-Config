@@ -1,0 +1,40 @@
+;; 递归遍历加载路径，将这些路径加入到加载列表中
+(defun add-subdirs-to-load-path(dir)
+  "Recursive add directories to `load-path`"
+  (let ((default-directory (file-name-as-directory dir)))
+    (add-to-list 'load-path dir)
+    (normal-top-level-add-subdirs-to-load-path)))
+
+;;递归加载~/.emacs.d/lisp目录
+(add-subdirs-to-load-path "~/.emacs.d/lisp")
+
+;; UI
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+(global-hl-line-mode 1)
+(global-display-line-numbers-mode 1)
+(setq display-line-numbers-type 'relative)
+(setq inhibit-splash-screen t)
+;; elpa软件源
+(setq package-archives '(("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+                         ("melpa"  . "https://melpa.org/packages/")))
+(package-initialize)
+
+;; dashboard
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+;; projectile
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;; evil-mode
+(require 'evil)
+(evil-mode 1)
+
+(setq custom-file "~/.emacs.d/lisp/custom.el")
+(load custom-file)
+;; theme-config
+(require 'init-theme)
+;; ivy-init-config
+(require 'init-ivy)

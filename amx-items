@@ -1,0 +1,30 @@
+
+;; ----- amx-history -----
+(
+ eaf-open
+ eaf-open-browser
+ netease-cloud-music
+ netease-cloud-music-login
+ netease-cloud-music-quit
+ netease-cloud-music-playlist-add-all
+ netease-cloud-music-ask-play
+)
+
+;; ----- amx-data -----
+(
+ (5x5 . 1)
+ (package-install . 8)
+ (all-the-icons-insert . 1)
+ (org-mode . 1)
+ (page-break-lines-mode . 1)
+ (package-list-packages . 1)
+ (cd . 1)
+ (eaf-open . 3)
+ (eaf-open-browser . 4)
+ (netease-cloud-music-ask-play . 2)
+ (netease-cloud-music-login . 4)
+ (netease-cloud-music-download-api . 1)
+ (netease-cloud-music-playlist-add-all . 1)
+ (netease-cloud-music-quit . 1)
+ (netease-cloud-music . 2)
+)
